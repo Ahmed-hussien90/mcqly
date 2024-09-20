@@ -1,4 +1,4 @@
-# darija
+# MCQLY
 
 A new Flutter project.
 
