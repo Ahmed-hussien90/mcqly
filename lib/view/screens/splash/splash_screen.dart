@@ -10,9 +10,9 @@ class SplashScreen extends StatelessWidget {
     return AnimatedSplashScreen(
         duration: 2000,
         splashIconSize: 250,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         splash: Image.asset(
-          "assets/images/hhhh.png",
+          "assets/images/logo.png",
         ),
         nextScreen: const HomeScreen(),
         splashTransition: SplashTransition.fadeTransition);

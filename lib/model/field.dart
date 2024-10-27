@@ -1,10 +1,10 @@
-import 'mcq.dart';
+import 'question.dart';
 
 class Field {
   final String image;
   final String title;
   final String description;
-  final List<MCQModel> questions;
+  final List<QuestionModel> questions;
 
   const Field({
     required this.image,
@@ -17,14 +17,14 @@ class Field {
     return {'image': image, 'title': title, 'description': description};
   }
 
-  static Field fromJson(Map json) {
+  static Field fromJson(Map json) {;
     return Field(
       image: json['image'],
       title: json['title'],
       description: json['description'],
-      questions: json['questions']
-          .map((question) => MCQModel.fromJson(question))
-          .toList(),
+      questions: json['questions']!=null ? (json['questions'] as List<Object?>)
+          .map((question) => QuestionModel.fromJson(question))
+          .toList(): [],
     );
   }
 }
