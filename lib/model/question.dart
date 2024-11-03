@@ -2,11 +2,13 @@ class QuestionModel {
   final String question;
   final List<String> answers;
   final int correctAnswer;
+  int selected;
 
   QuestionModel({
     required this.question,
     required this.answers,
     required this.correctAnswer,
+    this.selected = -1
   });
 
   Map toJson() {

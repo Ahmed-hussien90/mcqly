@@ -36,7 +36,7 @@ class MainDrawer extends StatelessWidget {
               builder: (theme) {
                 return ListTile(
                   leading: CupertinoSwitch(
-                    value: theme.isDark,
+                    value: !theme.isDark,
                     onChanged: (v) {
                       theme.changeTheme();
                     },

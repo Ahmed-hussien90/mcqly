@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mcqly/view/screens/questions/widget/questions_list_widget.dart';
 
 import '../../../model/question.dart';
 import '../../base/main_appbar.dart';
 
 class QuestionsScreen extends StatelessWidget {
-  const QuestionsScreen({super.key, required this.questions});
+   QuestionsScreen({super.key, required this.questions, required this.field});
 
-  final List<QuestionModel> questions;
+  List<QuestionModel> questions;
+  final String field;
 
   @override
   Widget build(BuildContext context) {
+    questions.shuffle();
+    questions = questions.sublist(0, 100);
     return Scaffold(
         appBar: const MainAppbar(),
         body: questions.isEmpty
             ? const Center(
           child: Text("There no data"),
         )
-            : QuestionsListWidget(questions: questions));
+            : QuestionsListWidget(questions: questions,field: field,));
   }
 }

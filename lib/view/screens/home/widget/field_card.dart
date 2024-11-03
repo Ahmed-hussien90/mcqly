@@ -18,9 +18,9 @@ class FieldCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (!isQuiz) {
-          Get.toNamed('/questions', arguments: field.questions);
+          Get.toNamed('/questions', arguments: [field.questions,field.title]);
         } else {
-          Get.toNamed('/quizzes', arguments: field.questions);
+          Get.toNamed('/quizzes', arguments: [field.questions,field.title]);
         }
       },
       child: Card(

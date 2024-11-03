@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:mcqly/model/field.dart';
 import 'package:mcqly/service/mcq_service.dart';
-class McqController extends GetxController{
+class FieldsController extends GetxController{
   final McqService mcqService;
-  McqController({required this.mcqService});
+  FieldsController({required this.mcqService});
   List<Field> fields = [];
   bool isLoading = false;
 

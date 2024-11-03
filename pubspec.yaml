@@ -46,6 +46,12 @@ dependencies:
   shared_preferences:
   google_fonts:
   icons_plus:
+  screenshot: ^3.0.0
+  image_gallery_saver: ^2.0.3
+  permission_handler: ^11.3.1
+  path_provider: ^2.1.5
+  open_file: ^3.5.9
+  share_plus: ^10.1.1
 
 
 dev_dependencies:
