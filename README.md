@@ -44,5 +44,3 @@ MCQLY isn't just about testing knowledge—it transforms learning into a compreh
 2. **Firebase-Powered Functionality**: Ensures fast and secure user interactions, from authentication to data retrieval.
 3. **Personalized User Experience**: Advanced UI components and customizable themes make learning enjoyable and adaptable to different preferences.
 4. **Certification System**: Users can earn certificates as proof of their learning accomplishments, which they can share or use to showcase their skills.
-
-
