@@ -5,7 +5,7 @@ import '../../../model/question.dart';
 import '../../base/main_appbar.dart';
 
 class QuestionsScreen extends StatelessWidget {
-   QuestionsScreen({super.key, required this.questions, required this.field});
+  QuestionsScreen({super.key, required this.questions, required this.field});
 
   List<QuestionModel> questions;
   final String field;
@@ -13,13 +13,18 @@ class QuestionsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     questions.shuffle();
-    questions = questions.sublist(0, 100);
+    if (questions.length > 100) {
+      questions = questions.sublist(0, 100);
+    }
     return Scaffold(
-        appBar: const MainAppbar(),
+        appBar: MainAppbar(title: "$field Questions",),
         body: questions.isEmpty
             ? const Center(
-          child: Text("There no data"),
-        )
-            : QuestionsListWidget(questions: questions,field: field,));
+                child: Text("There no data"),
+              )
+            : QuestionsListWidget(
+                questions: questions,
+                field: field,
+              ));
   }
 }

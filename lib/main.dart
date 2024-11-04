@@ -1,13 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mcqly/controller/theme_controller.dart';
 import 'package:mcqly/firebase_options.dart';
 import 'package:mcqly/utils/app_routes.dart';
-import 'package:mcqly/utils/constant.dart';
-import 'package:mcqly/view/screens/certificate/widget/certificate_view.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +24,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/splash",
       getPages: appRoutes,
-      //home: Scaffold(body: CertificationView(name: "Ahmed Hussien",quiz: "Mathematical",),),
       darkTheme: ThemeData(
         useMaterial3: true,
         cardTheme: const CardTheme(

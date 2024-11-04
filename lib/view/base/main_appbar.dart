@@ -20,6 +20,8 @@ class MainAppbar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title ?? 'MCQly',
+        maxLines: 2,
+        textAlign: TextAlign.center,
         style: const TextStyle(
             fontWeight: FontWeight.bold,  fontSize: 20),
       ),

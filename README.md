@@ -11,14 +11,26 @@
 
 ### screenshot
 
-**light mode**
+**Light Mode**
+<p float="left">
+  <img src="screenshot/7.jpg" width="150" />
+  <img src="screenshot/8.jpg" width="150" />
+  <img src="screenshot/9.jpg" width="150" />
+  <img src="screenshot/10.jpg" width="150" />
+  <img src="screenshot/11.jpg" width="150" />
+  <img src="screenshot/12.jpg" width="150" />
+</p>
 
-![1.jpg](screenshot%2F1.jpg)
-![2.jpg](screenshot%2F2.jpg)
-![3.jpg](screenshot%2F3.jpg)
-![4.jpg](screenshot%2F4.jpg)
-![5.jpg](screenshot%2F5.jpg)
-![6.png](screenshot%2F6.png)
+**Dark Mode**
+<p float="left">
+  <img src="screenshot/1.jpg" width="150" />
+  <img src="screenshot/2.jpg" width="150" />
+  <img src="screenshot/3.jpg" width="150" />
+  <img src="screenshot/4.jpg" width="150" />
+  <img src="screenshot/5.jpg" width="150" />
+  <img src="screenshot/6.jpg" width="150" />
+</p>
+
 MCQLY isn't just about testing knowledge—it transforms learning into a comprehensive and interactive experience by incorporating cutting-edge features. Here's what makes MCQLY stand out:
 
 - **Firebase Integration**: The app uses Firebase for robust data management, real-time updates, firebase storage, and cloud storage. This integration ensures seamless data synchronization and a scalable infrastructure that supports a growing user base.

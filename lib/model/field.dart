@@ -17,7 +17,7 @@ class Field {
     return {'image': image, 'title': title, 'description': description};
   }
 
-  static Field fromJson(Map json) {;
+  static Field fromJson(Map json) {
     return Field(
       image: json['image'],
       title: json['title'],

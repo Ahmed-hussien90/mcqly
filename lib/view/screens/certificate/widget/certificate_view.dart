@@ -69,10 +69,10 @@ class CertificationView extends StatelessWidget {
               )),
           Positioned(
               bottom: 10,
-              left: 0,
+              left: -2,
               child: Image.asset(
                 appLogo,
-                width: 50,
+                width: 40,
               )),
           const Positioned(
               bottom: 30,

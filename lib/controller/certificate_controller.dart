@@ -3,11 +3,9 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gal/gal.dart';
 import 'package:get/get.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -33,7 +31,7 @@ class CertificateController extends GetxController {
       name: name,
       field: field,
     ));
-    ImageGallerySaver.saveImage(bytes);
+    await Gal.putImageBytes(bytes);
     await File(path).writeAsBytes(bytes);
     return path;
   }

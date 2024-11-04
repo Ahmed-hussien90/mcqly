@@ -24,7 +24,9 @@ class MainDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.star_rate_rounded),
             title: const Text("Rate us"),
-            onTap: () {},
+            onTap: () {
+              launchUrl(Uri.parse(appGoogleStoreLink));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.help),
