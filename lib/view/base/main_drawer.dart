@@ -57,7 +57,7 @@ class MainDrawer extends StatelessWidget {
             leading: const Icon(Icons.call),
             title: const Text("Contact Us"),
             onTap: () {
-              launchUrl(Uri.parse(moreAppsLink));
+              launchUrl(Uri.parse(contactUsLink));
             },
           ),
         ],
