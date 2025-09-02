@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mcqly/model/field.dart';
+import 'package:mcqly/model/question.dart';
 import 'package:mcqly/utils/constant.dart';
 
 class FieldCard extends StatelessWidget {
@@ -20,7 +21,11 @@ class FieldCard extends StatelessWidget {
         if (!isQuiz) {
           Get.toNamed('/questions', arguments: [field.questions,field.title]);
         } else {
-          Get.toNamed('/quizzes', arguments: [field.questions,field.title]);
+          field.questions.shuffle();
+          List<QuestionModel> quizQuestions = field.questions.length > 10
+              ? field.questions.sublist(0, 10)
+              : field.questions;
+          Get.toNamed('/quizzes', arguments: [quizQuestions,field.title]);
         }
       },
       child: Card(

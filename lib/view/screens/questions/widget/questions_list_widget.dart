@@ -18,17 +18,44 @@ class QuestionsListWidget extends StatefulWidget {
 
 class _QuestionsListWidgetState extends State<QuestionsListWidget> {
 
+
+  @override
+  void dispose() {
+    Get.delete<QuestionsController>();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     double cardWidth = MediaQuery.of(context).size.width / 2;
     double cardHeight = MediaQuery.of(context).size.height / 10;
 
     return GetBuilder(
-        init: QuestionsController(widget.questions, widget.isQuiz),
+        init: QuestionsController(widget.questions, widget.isQuiz, widget.field),
         builder: (questionController) {
           return SingleChildScrollView(
             child: Column(
               children: [
+                Visibility(
+                    visible: widget.isQuiz,
+                    child:  Container(
+                      padding: const EdgeInsets.all(10),
+                      color: Colors.green,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.timer, color: Colors.white),
+                          const SizedBox(width: 5),
+                          Text(
+                            "${questionController.timerSeconds} sec",
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    )),
                 ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -156,19 +183,7 @@ class _QuestionsListWidgetState extends State<QuestionsListWidget> {
                           backgroundColor: Colors.green,
                           foregroundColor: Colors.white),
                       onPressed: () async {
-                        int score = 0;
-                        for (var value in questionController.questions) {
-                          if (value.correctAnswer == value.selected) {
-                            score++;
-                          }
-                        }
-                        int? result = await Get.dialog(
-                            ResultDialog(score: score,field: widget.field,),
-                            barrierDismissible: false);
 
-                        if (result == 1) {
-                          questionController.showAnswers();
-                        }
                       },
                       child: const Text("Submit"),
                     ).paddingSymmetric(vertical: 20),
@@ -180,6 +195,5 @@ class _QuestionsListWidgetState extends State<QuestionsListWidget> {
         });
   }
 
-  @override
   bool get wantKeepAlive => true;
 }
