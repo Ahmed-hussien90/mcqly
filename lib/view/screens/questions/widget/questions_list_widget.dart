@@ -175,7 +175,7 @@ class _QuestionsListWidgetState extends State<QuestionsListWidget> {
                       ).paddingAll(5);
                     }),
                 Visibility(
-                  visible: widget.isQuiz,
+                  visible: widget.isQuiz && !questionController.isShowedAnswers,
                   child: SizedBox(
                     width: 200,
                     child: ElevatedButton(
@@ -183,7 +183,7 @@ class _QuestionsListWidgetState extends State<QuestionsListWidget> {
                           backgroundColor: Colors.green,
                           foregroundColor: Colors.white),
                       onPressed: () async {
-
+                       await  questionController.endQuiz();
                       },
                       child: const Text("Submit"),
                     ).paddingSymmetric(vertical: 20),
