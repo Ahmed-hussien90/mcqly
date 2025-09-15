@@ -49,6 +49,7 @@ android {
         targetSdk = 35
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
+        ndkVersion = "29.0.14033849"
     }
 
     signingConfigs {
